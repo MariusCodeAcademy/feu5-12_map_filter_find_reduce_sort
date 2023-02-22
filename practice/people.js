@@ -97,3 +97,57 @@ people.forEach((pObj) => {
 });
 
 // 5.1 Naudojant Array.prototype.map grazinti naujame masyve visų vairuojančių žmonių lytį.
+const drivers1 = people.filter((pObj) => pObj.hasCar === true);
+console.log('drivers1 ===', drivers1);
+let driversGenderArr = drivers1.map((pObj) => pObj.sex);
+console.log('driversGenderArr ===', driversGenderArr);
+
+// metodu jungimas i grandinele
+driversGenderArr = people
+  .filter((pObj) => pObj.hasCar === true)
+  .map((pObj) => pObj.sex);
+console.log('driversGenderArr ===', driversGenderArr);
+
+// 6. Naudojant Array.prototype.forEach ir globalius kintamuosius,
+// suskaičiuoti vairuojančių moterų ir vyrų kiekius, bei juos atspausdinti.
+
+function makeDriverCount() {
+  // sukti cikla
+  /// skaicuoti i atskirus kibirelius
+  let vyrai = 0;
+  let moterys = 0;
+  people.forEach((pObj) => {
+    // jei vairuoja
+    if (pObj.hasCar === true) {
+      // vairuojanti/s
+      if (pObj.sex === 'female') {
+        // vairuojanti moteris
+        moterys++;
+      } else {
+        // vairuojantis vyras
+        vyrai++;
+      }
+    }
+  });
+  console.log({ vyrai, moterys });
+  // jei moteris
+  // dedam i moteru count
+  // jei ne i vyru count
+}
+makeDriverCount();
+
+// {
+//   name: 'Jonas',
+//   surname: 'Jonaitis',
+//   sex: 'male',
+//   age: 26,
+//   income: 1200,
+//   married: false,
+//   hasCar: false,
+// },
+
+// 7. Pagal people masyvą, naudojant Array.prototype.map, suformuokite masyva su objektais, kurie turės savybes sex ir income
+// {
+//   sex: 'male',
+//   income: 1200,
+// },
