@@ -102,7 +102,7 @@ console.log('drivers1 ===', drivers1);
 let driversGenderArr = drivers1.map((pObj) => pObj.sex);
 console.log('driversGenderArr ===', driversGenderArr);
 
-// metodu jungimas i grandinele
+// metodu jungimas i grandinele =================
 driversGenderArr = people
   .filter((pObj) => pObj.hasCar === true)
   .map((pObj) => pObj.sex);
@@ -151,3 +151,12 @@ makeDriverCount();
 //   sex: 'male',
 //   income: 1200,
 // },
+
+const smallerObjArr = people.map((pObj) => {
+  const newSmallerObj = {
+    gender: pObj.sex,
+    income: pObj.income,
+  };
+  return newSmallerObj;
+});
+console.log('smallerObjArr ===', smallerObjArr);
