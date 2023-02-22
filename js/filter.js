@@ -40,3 +40,6 @@ const tipai = {
 console.log('tipai ===', tipai);
 
 // is users arr grazinti objektus kuriu amzius yra daugiau nei 25
+const adultArr = users.filter((uObj) => uObj.age > 25);
+console.log('adultArr ===', adultArr);
+console.table(adultArr);

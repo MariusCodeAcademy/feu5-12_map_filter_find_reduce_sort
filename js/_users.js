@@ -35,3 +35,6 @@ const users = [
     isAdmin: false,
   },
 ];
+
+// atspausdinti pirmo obj varda
+// console.log(users[0].name);
