@@ -38,3 +38,5 @@ const tipai = {
   nums: myArray.filter((el) => typeof el === 'number'),
 };
 console.log('tipai ===', tipai);
+
+// is users arr grazinti objektus kuriu amzius yra daugiau nei 25

@@ -43,3 +43,9 @@ console.log('strArr ===', strArr);
 
 const strArrOne = arr.map((sk) => `reiksme ${sk}`);
 console.log('strArrOne ===', strArrOne);
+
+// is users arr grazinti tik string vardu masyva
+const names = users.map((userObj) => {
+  return userObj.age;
+});
+console.log('names ===', names);
