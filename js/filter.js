@@ -22,3 +22,19 @@ const evenNumArr = arr.filter((sk) => sk % 2 === 0);
 console.log('evenNumArr ===', evenNumArr);
 console.log('positivesArr ===', positivesArr);
 console.log('negatives ===', negatives);
+
+let myArray = [42, true, 'Hello World', false, 3.14, 'Spring', 0];
+
+// atrkinkiti i naujus masyvus kiekvie tipo reiksmes
+// i atskirus kintamuosius
+const strOrBool = myArray.filter(
+  (el) => typeof el === 'string' || typeof el === 'boolean'
+);
+console.log('strOrBool ===', strOrBool);
+// atrikti i objekta su savybe kiekvieno tipo masyvui
+const tipai = {
+  str: myArray.filter((el) => typeof el === 'string'),
+  bool: myArray.filter((el) => typeof el === 'boolean'),
+  nums: myArray.filter((el) => typeof el === 'number'),
+};
+console.log('tipai ===', tipai);
