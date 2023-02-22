@@ -68,3 +68,32 @@ people.forEach((pObj) => {
 });
 
 // 2. Naudojant Array.prototype.filter grazinti visas moteris jaunesnes nei 35 metai.
+
+const youngLadiesArr = people.filter(
+  (pObj) => pObj.sex === 'female' && pObj.age < 35
+);
+console.table(youngLadiesArr);
+
+// 3. Naudojant Array.prototype.forEach atspausdinti visus žmones kurie turi mašinas.
+
+people.forEach((pObj) => {
+  // ar asmuo turi masina
+  if (pObj.hasCar === true) {
+    console.log('has car ===', pObj);
+  }
+});
+
+const drivers = people.filter((pObj) => pObj.hasCar === true);
+console.table(drivers);
+
+// 5. Naudojant Array.prototype.forEach atspausdinti visų vairuojančių žmonių lytį.
+
+people.forEach((pObj) => {
+  // ar vairuoja?
+  if (pObj.hasCar === true) {
+    // jei taip spausdinam lyti
+    console.log('driver lytis ===', pObj.sex);
+  }
+});
+
+// 5.1 Naudojant Array.prototype.map grazinti naujame masyve visų vairuojančių žmonių lytį.
