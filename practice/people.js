@@ -157,6 +157,53 @@ const smallerObjArr = people.map((pObj) => {
     gender: pObj.sex,
     income: pObj.income,
   };
+  pObj.kazkas = 'kazka';
   return newSmallerObj;
 });
 console.log('smallerObjArr ===', smallerObjArr);
+console.table(people);
+
+// 8. Pagal people masyvą, naudojant Array.prototype.map, suformuokite masyva pakeičiant savybę 'income' į 'salary'
+// pirma sukuriam nauja savybe i objekta 'salary'
+// istrinti income
+// {
+//   name: 'Jonas',
+//   surname: 'Jonaitis',
+//   sex: 'male',
+//   age: 26,
+//   income: 1200,
+//   married: false,
+//   hasCar: false,
+// },
+function makeIncomeToSalary(pArr) {
+  const changedArr = pArr.map((pObj) => {
+    // pridedam reikiama nauja property
+    pObj.salary = pObj.income;
+    // istrinti sena nereikalinga property
+    delete pObj.income;
+    return pObj;
+  });
+
+  console.log('changedArr ===', changedArr);
+}
+console.table(people);
+
+// modifikuojam esama masyva
+makeIncomeToSalary(people);
+
+console.table(people);
+
+// 10. Pagal people masyvą, naudojant Array.prototype.map, suformuokite masyvą kur savybės name ir surname būtų pakeistos viena savybe - fullname
+
+function makeFullName(pArr) {
+  const changedArr = pArr.map((pObj) => {
+    // spread operator nukopijuoja reiksmes - magic
+    const pObjCopy = { ...pObj };
+    pObjCopy.fullname = `${pObjCopy.name} ${pObjCopy.surname}`;
+    delete pObjCopy.name;
+    delete pObjCopy.surname;
+    return pObjCopy;
+  });
+  console.table(changedArr);
+}
+makeFullName(people);
